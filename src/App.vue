@@ -21,7 +21,9 @@ import LoadingPage from "@/components/LoadingPage.vue";
 <template>
   <LoadingPage />
   <Header />
-  <router-view></router-view>
+  <div class="content mx-3">
+    <router-view></router-view>
+  </div>
   <Footer />
 </template>
 
@@ -45,5 +47,15 @@ import LoadingPage from "@/components/LoadingPage.vue";
       color: #42b983;
     }
   }
+}
+
+.content {
+  position: relative;
+  top: 50px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow-y: scroll;
 }
 </style>

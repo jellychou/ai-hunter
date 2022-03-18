@@ -7,7 +7,7 @@
       <a href="javascript:;" class="pr-3 theme-text-color">設定金鑰</a>
       <el-icon size="large" class="relative"><bell /></el-icon>
       <span class="notice rounded-full flex items-center justify-center"
-        >1</span
+        >12</span
       >
     </div>
   </div>
@@ -29,10 +29,10 @@
     position: absolute;
     right: 3px;
     top: 10px;
-    height: 15px;
-    width: 15px;
+    height: 14px;
+    width: 14px;
     color: #ffffff;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     background-color: rgb(214, 65, 65);
   }
 }
