@@ -15,6 +15,10 @@
 
 <style lang="scss" scoped>
 .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   height: 50px;
   background-color: #ffffff;
   .header-logo {
