@@ -19,6 +19,9 @@ body {
 
 .el-dialog {
   min-height: 30%;
+  .el-dialog__title {
+    font-weight: 800;
+  }
   .el-dialog__body {
     text-align: left;
     line-height: 1.6;
@@ -33,7 +36,6 @@ body {
   height: 20px;
 }
 
-
 .theme-text-color {
   color: #4a5516;
 }
@@ -41,4 +43,28 @@ body {
 .theme-bg-color {
   color: #ffffff;
   background-color: #4a5516;
+}
+
+.login-checkbox {
+  .el-checkbox-checked-bg-color {
+    background-color: #4a5516;
+  }
+}
+
+.import-color {
+  color: #ffffff;
+  background-color: #b71e1f;
+}
+
+.el-button:nth-child(2) {
+  margin-left: 0;
+}
+
+.el-button {
+  border: none;
+}
+
+.el-button:focus,
+.el-button:hover {
+  appearance: none;
 }

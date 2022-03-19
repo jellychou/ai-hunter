@@ -9,10 +9,6 @@ defineProps({
     type: Boolean,
     default: false,
   },
-  title: {
-    type: String,
-    default: "",
-  },
 });
 
 const form = reactive({
@@ -27,7 +23,7 @@ const handleClose = () => {
 <template>
   <el-dialog
     :model-value="dialogVisible"
-    :title="title"
+    title="忘記密碼"
     width="90%"
     center
     :before-close="handleClose"
@@ -42,7 +38,7 @@ const handleClose = () => {
       size="large"
       placeholder="請輸入您註冊的電子郵件信箱"
     />
-    <div class="dialog-forget__notice my-2 flex">
+    <div class="leading-none text-left text-sm text-red-600 my-2 flex">
       <span class="pr-2">※</span>
       <span> 注意，系統發送的驗證信件，有效時間為24H，逾期失效。 </span>
     </div>
@@ -60,11 +56,5 @@ const handleClose = () => {
     padding: 10px 30px;
   }
 
-  .dialog-forget__notice {
-    font-size: 0.8rem;
-    text-align: left;
-    line-height: 1;
-    color: red;
-  }
 }
 </style>

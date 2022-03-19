@@ -141,9 +141,7 @@ const checkSafePassword = ref("");
     background-color: rgb(214, 65, 65);
     color: #ffffff;
   }
-  ::v-deep(.el-button) {
-    margin-left: 0;
-  }
+  
   .isValid {
     color: #4a5516;
   }

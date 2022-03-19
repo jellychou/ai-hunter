@@ -19,7 +19,6 @@ const dialogFeedBack = (Boolean) => {
   // confirm button click do some thing!
 };
 
-const title = ref("忘記密碼");
 </script>
 <template>
   <div class="login">
@@ -56,7 +55,6 @@ const title = ref("忘記密碼");
     <el-button class="login-button" size="large">登入</el-button>
   </div>
   <LoginForgetDialog
-    :title="title"
     :dialogVisible="dialogVisible"
     @dialogFeedBack="dialogFeedBack"
   />
@@ -67,15 +65,11 @@ const title = ref("忘記密碼");
   border-radius: 5px;
   padding: 1rem;
   animation: fadeIn 1s;
+
   .login-title {
     font-size: 1.5rem;
   }
-
-  .login-checkbox {
-    ::v-deep(.el-checkbox-checked-bg-color) {
-      background-color: #4a5516;
-    }
-  }
+  
   .login-button {
     background-color: #4a5516;
     color: #ffffff;
