@@ -27,5 +27,7 @@ const getNoticeHeader = computed(() => {
   left: 0;
   height: 50px;
   background-color: #ffffff;
+  z-index: 10;
+  box-shadow: 0 10px 15px -3px #c3c3c39e;
 }
 </style>
