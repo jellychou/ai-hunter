@@ -18,14 +18,14 @@ body {
 }
 
 .el-dialog {
-  min-height: 30%;
+  // min-height: 30%;
   .el-dialog__title {
     font-weight: 800;
   }
   .el-dialog__body {
     text-align: left;
     line-height: 1.6;
-    padding: 10px 30px;
+    padding: 0;
   }
   .dialog-footer {
     text-align: center;
