@@ -1,67 +1,75 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-const isActive = ref("home");
+const router = useRouter();
+
+const goPage = (val) => {
+  router.push(val);
+};
+
+const thisRouter = ref(router.currentRoute.value.path);
+console.log(thisRouter.value);
 </script>
 
 <template>
   <div class="footer">
     <ul class="footer-list text-white grid grid-cols-5 gap-5">
       <li
-        @click="isActive = 'home'"
+        @click="goPage('/')"
         :class="[
           'grid',
           'justify-items-center',
           'content-center',
-          { 'text-yellow-400': isActive === 'home' },
+          { 'text-yellow-400': thisRouter === '/' },
         ]"
       >
         <el-icon><house /></el-icon>
         <span>首頁</span>
       </li>
       <li
-        @click="isActive = 'deal'"
+        @click="goPage('/deal')"
         :class="[
           'grid',
           'justify-items-center',
           'content-center',
-          { 'text-yellow-400': isActive === 'deal' },
+          { 'text-yellow-400': thisRouter === '/deal' },
         ]"
       >
         <el-icon><shop /></el-icon>
         <span>交易</span>
       </li>
       <li
-        @click="isActive = 'scanning'"
+        @click="goPage('/scanning')"
         :class="[
           'grid',
           'justify-items-center',
           'content-center',
-          { 'text-yellow-400': isActive === 'scanning' },
+          { 'text-yellow-400': thisRouter === '/scanning' },
         ]"
       >
         <el-icon><printer /></el-icon>
         <span>掃描</span>
       </li>
       <li
-        @click="isActive = 'financial'"
+        @click="goPage('/financial')"
         :class="[
           'grid',
           'justify-items-center',
           'content-center',
-          { 'text-yellow-400': isActive === 'financial' },
+          { 'text-yellow-400': thisRouter === '/financial' },
         ]"
       >
         <el-icon><coin /></el-icon>
         <span>理財</span>
       </li>
       <li
-        @click="isActive = 'wallet'"
+        @click="goPage('/wallet')"
         :class="[
           'grid',
           'justify-items-center',
           'content-center',
-          { 'text-yellow-400': isActive === 'wallet' },
+          { 'text-yellow-400': thisRouter === '/wallet' },
         ]"
       >
         <el-icon><shopping-bag /></el-icon>

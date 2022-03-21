@@ -2,6 +2,10 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import LoadingPage from "@/components/LoadingPage.vue";
+import { useRouter } from "vue-router";
+import { computed } from "vue";
+
+const router = useRouter();
 // import { onMounted } from "vue";
 // import { useStore } from "vuex";
 
@@ -17,11 +21,19 @@ import LoadingPage from "@/components/LoadingPage.vue";
 //     }
 //   };
 // });
+
+const getNoticeHeader = computed(() => {
+  const showHeader = ["/"];
+  const isShow = showHeader.some((e) => {
+    return e === router.currentRoute.value.path;
+  });
+  return isShow;
+});
 </script>
 <template>
   <LoadingPage />
-  <Header />
-  <div class="content mx-3">
+  <Header v-if="getNoticeHeader" />
+  <div class="mx-3" :class="{ content: getNoticeHeader }">
     <router-view></router-view>
   </div>
   <Footer />
@@ -55,7 +67,7 @@ import LoadingPage from "@/components/LoadingPage.vue";
   bottom: 50px;
   left: 0;
   right: 0;
-  height: 100%;
+  // height: 100%;
   overflow-y: scroll;
 }
 </style>

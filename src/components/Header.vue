@@ -1,22 +1,52 @@
 <script setup>
+import { ref } from "vue";
 import { useRouter } from "vue-router";
-import HeaderHome from "./HeaderHome.vue";
-import HeaderNotice from "./HeaderNotice.vue";
-import { computed } from "vue";
+import SetGoldKeyDialog from "./SetGoldKeyDialog.vue";
 
 const router = useRouter();
-const getNoticeHeader = computed(() => {
-  const showHeader = ["/noticeList"];
-  const isShow = showHeader.some((e) => {
-    return e === router.currentRoute.value.path;
-  });
-  return isShow;
-});
+
+const dialogVisible = ref(false);
+
+const openSetKeyDialog = () => {
+  dialogVisible.value = true;
+};
+
+const dialogFeedBack = (Boolean) => {
+  if (!Boolean) return (dialogVisible.value = false);
+  // confirm button click do some thing!
+};
 </script>
 
 <template>
-  <HeaderHome v-if="router.currentRoute.value.path === '/'" />
-  <HeaderNotice v-if="getNoticeHeader" />
+  <div class="header flex items-center justify-between px-2">
+    <img
+      class="header-logo"
+      @click="router.push({ name: 'Home' })"
+      src="@/assets/image/header-logo.png"
+      alt="logo"
+    />
+    <div class="flex items-center">
+      <a
+        href="javascript:;"
+        class="pr-3 theme-text-color"
+        @click="openSetKeyDialog"
+        >設定金鑰</a
+      >
+      <div
+        class="flex items-center"
+        @click="router.push({ name: 'NoticeList' })"
+      >
+        <el-icon size="large" class="relative"><bell /></el-icon>
+        <span class="notice rounded-full flex items-center justify-center"
+          >12</span
+        >
+      </div>
+    </div>
+  </div>
+  <SetGoldKeyDialog
+    :dialogVisible="dialogVisible"
+    @dialogFeedBack="dialogFeedBack"
+  />
 </template>
 
 <style lang="scss">
@@ -29,5 +59,19 @@ const getNoticeHeader = computed(() => {
   background-color: #ffffff;
   z-index: 10;
   box-shadow: 0 10px 15px -3px #c3c3c39e;
+  .header-logo {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .notice {
+    position: absolute;
+    right: 3px;
+    top: 10px;
+    height: 14px;
+    width: 14px;
+    color: #ffffff;
+    font-size: 0.6rem;
+    background-color: rgb(214, 65, 65);
+  }
 }
 </style>

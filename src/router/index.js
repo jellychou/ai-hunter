@@ -16,6 +16,26 @@ const routes = [
     name: "NoticeList",
     component: () => import("@/views/NoticeList.vue"),
   },
+  {
+    path: "/deal",
+    name: "Deal",
+    component: () => import("@/views/Deal.vue"),
+  },
+  {
+    path: "/scanning",
+    name: "Scanning",
+    component: () => import("@/views/Scanning.vue"),
+  },
+  {
+    path: "/financial",
+    name: "Financial",
+    component: () => import("@/views/Financial.vue"),
+  },
+  {
+    path: "/wallet",
+    name: "Wallet",
+    component: () => import("@/views/Wallet.vue"),
+  },
 ];
 
 const router = createRouter({
