@@ -29,7 +29,7 @@ defineProps({
     </div>
     <div class="financial-card text-left py-3 px-2">
       <div class="text-gray-400 text-xs mb-2">{{ profitTitle }}</div>
-      <div class="text-green-500 text-2gixl font-500">{{ profitNum }}</div>
+      <div class="text-green-500 text-2xl font-500">{{ profitNum }}</div>
     </div>
   </div>
 </template>

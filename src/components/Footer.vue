@@ -3,13 +3,14 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const thisRouter = ref("/");
 
 const goPage = (val) => {
   router.push(val);
+  thisRouter.value = val;
 };
 
-const thisRouter = ref(router.currentRoute.value.path);
-console.log(thisRouter.value);
+
 </script>
 
 <template>
