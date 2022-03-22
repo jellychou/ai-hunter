@@ -14,27 +14,47 @@ const routes = [
   {
     path: "/noticeList",
     name: "NoticeList",
-    component: () => import("@/views/NoticeList.vue"),
+    component: () => import("@/views/NoticeList.vue"), // 通知
   },
   {
     path: "/deal",
     name: "Deal",
-    component: () => import("@/views/Deal.vue"),
+    component: () => import("@/views/Deal.vue"), // 交易
   },
   {
     path: "/scanning",
     name: "Scanning",
-    component: () => import("@/views/Scanning.vue"),
+    component: () => import("@/views/Scanning.vue"), // 掃描
   },
   {
     path: "/financial",
     name: "Financial",
-    component: () => import("@/views/Financial.vue"),
+    component: () => import("@/views/Financial.vue"), // 理財
   },
   {
     path: "/wallet",
     name: "Wallet",
-    component: () => import("@/views/Wallet.vue"),
+    component: () => import("@/views/Wallet.vue"), // 我的錢包
+  },
+  {
+    path: "/contractTrade",
+    name: "ContractTrade",
+    component: () => import("@/views/ContractTrade.vue"), // 合約交易
+  },
+  {
+    path: "/friendList",
+    name: "FriendList",
+    component: () => import("@/views/FriendList.vue"), // 好友列表
+  },
+  {
+    path: "/memberInfo",
+    name: "MemberInfo",
+    component: () => import("@/views/MemberInfo.vue"), // 會員資訊
+  },
+  {
+    path: "/spotGrid",
+    name: "SpotGrid",
+    component: () => import("@/views/SpotGrid.vue"), //現貨網格
   },
 ];
 

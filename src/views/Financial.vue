@@ -9,7 +9,7 @@ import FinancialCard from "@/components/FinancialCard.vue";
     </el-icon>
     <img src="@/assets/image/header-logo.png" alt="" />
   </div>
-  <div class="financial-content">
+  <div class="content-body">
     <div class="mt-3 mb-5">
       <div class="text-left">全部獲利</div>
       <FinancialCard
@@ -91,9 +91,6 @@ import FinancialCard from "@/components/FinancialCard.vue";
 </template>
 
 <style lang="scss" scoped>
-.financial-content {
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
+
 
 </style>

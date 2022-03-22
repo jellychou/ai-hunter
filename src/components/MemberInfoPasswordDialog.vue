@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from "@vue/reactivity";
+
 import { defineProps, defineEmits } from "vue";
 
 const emit = defineEmits(["dialogFeedBack"]);
@@ -11,10 +11,6 @@ defineProps({
   },
 });
 
-const form = reactive({
-  email: "",
-});
-
 const handleClose = () => {
   emit("dialogFeedBack", false);
 };
@@ -23,29 +19,24 @@ const handleClose = () => {
 <template>
   <el-dialog
     :model-value="dialogVisible"
-    title="忘記密碼"
+    title="變更會員登入密碼"
     width="90%"
     center
     :before-close="handleClose"
   >
     <div class="mx-3">
-      <div>
-        系統將發送驗證信件到以下信箱點 擊驗證連結後，系統會在發送一組
-        預設密碼到以下的電子郵件信箱請 您使用預設密碼登入後，立即修改 密碼。
-      </div>
-      <el-input
-        v-model="form.email"
-        class="my-2"
-        size="large"
-        placeholder="請輸入您註冊的電子郵件信箱"
-      />
+      <el-input class="my-2" size="large" placeholder="舊密碼" />
+      <el-input class="my-2" size="large" placeholder="新密碼" />
+      <el-input class="my-2" size="large" placeholder="確認新密碼" />
       <div class="leading-none text-left text-sm text-red-600 my-2 flex">
         <span class="pr-2">※</span>
-        <span> 注意，系統發送的驗證信件，有效時間為24H，逾期失效。 </span>
+        <span> 請妥善保存您的密碼，請勿交由其他人 以確保您的資產安全。 </span>
       </div>
     </div>
     <template #footer>
-      <el-button class="theme-bg-color w-3/5">確認發送</el-button>
+      <div class="mx-3">
+        <el-button class="theme-bg-color w-3/5">確認修改</el-button>
+      </div>
     </template>
   </el-dialog>
 </template>

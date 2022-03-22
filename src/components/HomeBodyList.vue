@@ -10,28 +10,28 @@ const cardList = reactive([
   },
   {
     title: "現貨網格",
-    path: "",
+    path: "/spotGrid",
   },
   {
     title: "合約交易",
-    path: "",
+    path: "/contractTrade",
   },
   {
     title: "好友列表",
-    path: "",
+    path: "/friendList",
   },
   {
     title: "我的錢包",
-    path: "",
+    path: "/wallet",
   },
   {
     title: "會員資訊",
-    path: "",
+    path: "/memberInfo",
   },
 ]);
 
 const goPage = (path) => {
-  route.push({ name: path });
+  route.push(path);
 };
 </script>
 

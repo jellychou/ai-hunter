@@ -19,7 +19,7 @@ const dialogFeedBack = (Boolean) => {
   <div class="header flex items-center justify-center px-2 font-bold">
     <div>我的錢包</div>
   </div>
-  <div class="wallet-content">
+  <div class="content-body">
     <div
       class="font-bold flex items-center justify-between py-1 px-2 my-3 rounded"
       style="background-color: #505c172e"
@@ -86,8 +86,6 @@ const dialogFeedBack = (Boolean) => {
 
 <style lang="scss" scoped>
 .wallet-content {
-  margin-top: 60px;
-  margin-bottom: 60px;
   .wallet-card {
     border: 1px solid #f5f5f5;
     border-radius: 5px;
