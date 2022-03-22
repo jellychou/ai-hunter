@@ -5,6 +5,7 @@ import MemberInfoPasswordDialog from "@/components/MemberInfoPasswordDialog.vue"
 import MemberInfoEditDialog from "@/components/MemberInfoEditDialog.vue";
 import MemberInfoBindGoogleDialog from "@/components/MemberInfoBindGoogleDialog.vue";
 import MemberInfoSafeDialog from "@/components/MemberInfoSafeDialog.vue";
+import MemberInfoMaster from "@/components/MemberInfoMaster.vue";
 
 const form = reactive([]);
 
@@ -12,12 +13,14 @@ const changePassword = ref(false);
 const changeSafePassword = ref(false);
 const reBindGoogle = ref(false);
 const editInfo = ref(false);
+const masterArea = ref(false);
 
 const dialogFeedBack = (Boolean) => {
   changePassword.value = false;
   changeSafePassword.value = false;
   reBindGoogle.value = false;
   editInfo.value = false;
+  masterArea.value = false;
   if (!Boolean) {
     // confirm button click do some thing!
   }
@@ -33,7 +36,11 @@ const dialogFeedBack = (Boolean) => {
     </div>
     <div class="w-1/3">會員資訊</div>
     <div class="w-1/3 text-right">
-      <span class="theme-bg-color text-xs px-2 py-1 rounded">高手專區</span>
+      <span
+        class="theme-bg-color text-xs px-2 py-1 rounded"
+        @click="masterArea = true"
+        >高手專區</span
+      >
     </div>
   </div>
   <div class="content-body my-3 px-3">
@@ -131,6 +138,10 @@ const dialogFeedBack = (Boolean) => {
   />
   <MemberInfoBindGoogleDialog
     :dialogVisible="reBindGoogle"
+    @dialogFeedBack="dialogFeedBack"
+  />
+  <MemberInfoMaster
+    :dialogVisible="masterArea"
     @dialogFeedBack="dialogFeedBack"
   />
 </template>
