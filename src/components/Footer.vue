@@ -1,16 +1,24 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const thisRouter = ref("/");
 
 const goPage = (val) => {
   router.push(val);
-  thisRouter.value = val;
 };
 
+const thisRouter = ref("");
 
+watch(
+  () => router,
+  () => {
+    thisRouter.value = router.currentRoute.value.path;
+  },
+  {
+    deep: true,
+  }
+);
 </script>
 
 <template>

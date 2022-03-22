@@ -12,7 +12,7 @@ defineProps({
 <template>
   <div class="h-full overflow-y-scroll px-2">
     <div
-      class="wallet-list flex items-center justify-between text-black px-2"
+      class="wallet-list flex items-center justify-between text-black px-2 py-1"
       v-for="item in itemData"
       :key="item.list_2"
     >

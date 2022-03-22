@@ -1,6 +1,8 @@
 <script setup>
 import WalletDialogList from "./WalletDialogList.vue";
 import WalletDialogStatus from "./WalletDialogStatus.vue";
+import WalletDialogWithdraw from "./WalletDialogWithdraw.vue";
+import WalletDialogRecharge from "./WalletDialogRecharge.vue";
 import { defineProps, defineEmits, ref, reactive } from "vue";
 
 const emit = defineEmits(["dialogFeedBack"]);
@@ -33,97 +35,6 @@ const itemData = reactive([
     list_4: "TRC",
     list_5: "已受理",
   },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: 100,
-    list_4: "TRC",
-    list_5: "已受理",
-  },
 ]);
 
 const itemData_2 = reactive([
@@ -139,92 +50,19 @@ const itemData_2 = reactive([
     list_3: "USDT",
     list_4: 100,
   },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
-  {
-    list_1: "提現",
-    list_2: "2020/01/13 00:00:00",
-    list_3: "USDT",
-    list_4: 100,
-  },
 ]);
+
+const handleClick = () => {
+  console.log(123);
+};
 </script>
 
 <template>
   <el-dialog
     :model-value="dialogVisible"
     title="帳務明細"
-    width="96%"
+    width="100%"
+    fullscreen
     center
     :before-close="handleClose"
   >
@@ -245,10 +83,13 @@ const itemData_2 = reactive([
       </el-tab-pane>
     </el-tabs>
   </el-dialog>
+  <WalletDialogWithdraw />
+  <WalletDialogRecharge />
 </template>
 
 <style lang="scss" scoped>
 .tab-pane {
-  height: 50vh;
+  height: 80vh;
+  overflow-y: scroll;
 }
 </style>
