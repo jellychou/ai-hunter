@@ -1,6 +1,7 @@
 <script setup>
 import { Check } from "@element-plus/icons-vue";
-import { reactive, ref } from "@vue/reactivity";
+import { reactive, ref } from "vue";
+import { useRouter } from "vue-router";
 import MemberInfoPasswordDialog from "@/components/MemberInfoPasswordDialog.vue";
 import MemberInfoEditDialog from "@/components/MemberInfoEditDialog.vue";
 import MemberInfoBindGoogleDialog from "@/components/MemberInfoBindGoogleDialog.vue";
@@ -8,6 +9,7 @@ import MemberInfoSafeDialog from "@/components/MemberInfoSafeDialog.vue";
 import MemberInfoMaster from "@/components/MemberInfoMaster.vue";
 
 const form = reactive([]);
+const router = useRouter();
 
 const changePassword = ref(false);
 const changeSafePassword = ref(false);

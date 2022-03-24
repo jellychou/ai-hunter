@@ -6,6 +6,7 @@ import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import * as Icons from "@element-plus/icons";
 import "@/style/index.scss";
+import "@/style/reset.scss";
 import "@/style/tailwind.css";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "@/plugins/fontawsome";

@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="scanning flex items-center justify-center h-screen">
+  <div class="scanning flex items-center justify-center h-full">
     <div>
-      <div class="scanning-qr-code block m-auto mb-10"></div>
+      <div class="scanning-qr-code block m-auto mb-10 rounded-xl"></div>
       <div class="flex items-center justify-around mt-10">
         <div>
           <div
@@ -19,7 +19,7 @@
           >
             <font-awesome-icon size="large" :icon="['fas', 'image']" />
           </div>
-          <span>收款</span>
+          <span>相簿</span>
         </div>
       </div>
     </div>

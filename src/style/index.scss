@@ -10,6 +10,7 @@ body {
 //   }
 // }
 
+
 .el-input__prefix {
   .el-input__prefix-inner {
     display: flex;
@@ -45,6 +46,10 @@ body {
   background-color: #4a5516;
 }
 
+.theme-border-color {
+  border: 1px solid #4a5516;
+}
+
 .login-checkbox {
   .el-checkbox-checked-bg-color {
     background-color: #4a5516;
@@ -70,9 +75,6 @@ body {
 }
 
 .content-body {
-  position: absolute;
-  top: 50px;
-  bottom: 50px;
-  left: 0;
-  right: 0;
+  overflow-y: scroll;
 }
+

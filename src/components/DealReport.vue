@@ -30,7 +30,7 @@ const dealData = reactive([
 </script>
 
 <template>
-  <table class="deal-report my-3">
+  <table class="deal-report mt-5 mb-3">
     <tr>
       <th class="text-left w-1/3">
         <span class="text-gray-400">名稱</span>
@@ -43,20 +43,20 @@ const dealData = reactive([
       </th>
     </tr>
     <tr v-for="list in dealData" :key="list.name">
-      <td class="text-left">
-        <span>{{ list.name }}</span
-        ><br />
-        <span class="text-gray-400 text-xs">{{ list.originalName }}</span>
+      <td class="text-left flex">
+        <img class="coin-icon mr-1" src="@/assets/image/btc.png" alt="" />
+        <div>
+          <div>{{ list.name }}</div>
+          <div class="text-gray-400 text-xs">{{ list.originalName }}</div>
+        </div>
       </td>
       <td class="text-left">
-        <span class="text-red-600">${{ list.price }}</span
-        ><br />
-        <span class="text-green-500">+{{ list.gain }}%</span>
+        <div class="text-red-600">${{ list.price }}</div>
+        <div class="text-green-500">+{{ list.gain }}%</div>
       </td>
       <td class="text-right">
-        <span>${{ list.maxDeal }}M</span
-        ><br />
-        <span class="text-gray-400 text-xs">{{ list.volume }}M</span>
+        <div>${{ list.maxDeal }}M</div>
+        <div class="text-gray-400 text-xs">{{ list.volume }}M</div>
       </td>
     </tr>
   </table>
@@ -65,5 +65,9 @@ const dealData = reactive([
 <style lang="scss" scoped>
 .deal-report {
   width: 100%;
+}
+.coin-icon {
+  height: 25px;
+  width: 25px;
 }
 </style>

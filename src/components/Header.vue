@@ -36,7 +36,10 @@ const dialogFeedBack = (Boolean) => {
         class="flex items-center"
         @click="router.push({ name: 'NoticeList' })"
       >
-        <el-icon size="large" class="relative"><bell /></el-icon>
+        <font-awesome-icon
+          class="relative text-2xl absolute theme-text-color"
+          :icon="['fas', 'bell']"
+        />
         <span class="notice rounded-full flex items-center justify-center"
           >12</span
         >
@@ -55,7 +58,7 @@ const dialogFeedBack = (Boolean) => {
   top: 0;
   right: 0;
   left: 0;
-  height: 50px;
+  height: 45px;
   background-color: #ffffff;
   z-index: 10;
   box-shadow: 0 10px 15px -3px #c3c3c39e;
@@ -64,14 +67,14 @@ const dialogFeedBack = (Boolean) => {
     max-width: 100%;
   }
   .notice {
-    position: absolute;
-    right: 3px;
-    top: 10px;
-    height: 14px;
-    width: 14px;
+    position: relative;
+    right: 8px;
+    bottom: 6px;
+    height: 15px;
+    width: 15px;
     color: #ffffff;
     font-size: 0.6rem;
-    background-color: rgb(214, 65, 65);
+    background-color: #d64141;
   }
 }
 </style>

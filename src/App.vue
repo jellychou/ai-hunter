@@ -1,5 +1,6 @@
 <script setup>
 import Header from "@/components/Header.vue";
+import HeaderLogo from "@/components/HeaderLogo.vue";
 import Footer from "@/components/Footer.vue";
 import LoadingPage from "@/components/LoadingPage.vue";
 import { useRouter } from "vue-router";
@@ -22,20 +23,32 @@ const router = useRouter();
 //   };
 // });
 
-const getNoticeHeader = computed(() => {
-  const showHeader = ["/"];
+const getPageHeader = computed(() => {
+  const showHeader = ["/scanning", "/financial", "/wallet"];
   const isShow = showHeader.some((e) => {
     return e === router.currentRoute.value.path;
   });
   return isShow;
 });
+
+const getShowHeader = computed(() => {
+  const showHeader = ["/", "/deal", "/scanning", "/financial", "/wallet"];
+  const isShow = showHeader.some((e) => {
+    return e === router.currentRoute.value.path;
+  });
+  console.log();
+  return isShow;
+});
 </script>
 <template>
   <LoadingPage />
-  <Header v-if="getNoticeHeader" />
-  <div class="mx-3" :class="{ content: getNoticeHeader }">
-    <router-view></router-view>
-  </div>
+  <Header v-show="router.currentRoute.value.path === '/'" />
+  <HeaderLogo v-show="getPageHeader" />
+  <transition name="el-fade-in-linear">
+    <div class="px-2 mt-2" :class="{ content: getShowHeader }">
+      <router-view></router-view>
+    </div>
+  </transition>
   <Footer />
 </template>
 
@@ -62,12 +75,11 @@ const getNoticeHeader = computed(() => {
 }
 
 .content {
-  position: relative;
-  top: 50px;
-  bottom: 50px;
+  position: absolute;
+  top: 45px;
+  bottom: 45px;
   left: 0;
   right: 0;
-  // height: 100%;
   overflow-y: scroll;
 }
 </style>

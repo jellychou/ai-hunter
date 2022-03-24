@@ -1,8 +1,10 @@
 <script setup></script>
 
 <template>
-  <div class="marquee">
-    <span></span>
+  <div class="marquee flex items-center">
+    <span class="mr-2">
+      <font-awesome-icon size="large" :icon="['fas', 'bullhorn']" />
+    </span>
     <span>Welcome to Ai Hunter Trader</span>
   </div>
 </template>

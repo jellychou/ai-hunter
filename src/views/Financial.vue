@@ -1,57 +1,61 @@
 <script setup>
+import FinancialPointRecharge from "@/components/FinancialPointRecharge.vue";
+import FinancialTimeRecharge from "@/components/FinancialTimeRecharge.vue";
 import FinancialCard from "@/components/FinancialCard.vue";
+import { ref } from "vue";
+
+const dialogVisiblePoint = ref(false);
+const dialogVisibleTime = ref(false);
+
+const dialogFeedBack = () => {
+  dialogVisiblePoint.value = false;
+  dialogVisibleTime.value = false;
+};
 </script>
 
 <template>
-  <div class="header flex items-center justify-between px-2">
-    <el-icon size="large" @click="router.push('/')">
-      <arrow-left-bold />
-    </el-icon>
+  <div class="header flex items-center justify-center px-2">
     <img src="@/assets/image/header-logo.png" alt="" />
   </div>
-  <div class="content-body">
+  <div>
     <div class="mt-3 mb-5">
       <div class="text-left">全部獲利</div>
-      <FinancialCard
-        totalNum="0.00"
-        totalTitle="獲利總計 (USDT)"
-        profitTitle="24h 獲利"
-        profitNum="0.00"
-      />
+      <div class="grid grid-cols-2 gap-2">
+        <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
+        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+      </div>
     </div>
     <div class="mt-3 mb-5">
       <div class="text-left">現貨獲利</div>
-      <FinancialCard
-        totalNum="0.00"
-        totalTitle="獲利總計 (USDT)"
-        profitTitle="24h 獲利"
-        profitNum="0.00"
-      />
+      <div class="grid grid-cols-2 gap-2">
+        <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
+        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+      </div>
     </div>
     <div class="mt-3 mb-5">
       <div class="text-left">合約獲利</div>
-      <FinancialCard
-        totalNum="0.00"
-        totalTitle="獲利總計 (USDT)"
-        profitTitle="24h 獲利"
-        profitNum="0.00"
-      />
+      <div class="grid grid-cols-2 gap-2">
+        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+      </div>
     </div>
     <hr />
     <div class="mt-3 mb-5">
       <div class="flex items-center justify-between">
         <div>
           燃料點數
-          <span class="text-red-600 text-xs">(點數不足時，系統將停止交易)</span>
+          <span class="text-red-600 text-xs">※點數不足時，系統將停止交易</span>
         </div>
-        <font-awesome-icon :icon="['fas', 'plus']" />
+        <font-awesome-icon
+          class="mr-2"
+          :icon="['fas', 'plus']"
+          @click="dialogVisiblePoint = true"
+        />
       </div>
-      <FinancialCard
-        totalNum="0.00"
-        totalTitle="剩餘點數"
-        profitTitle="已使用"
-        profitNum="0.00"
-      />
+      <div class="grid grid-cols-2 gap-2">
+        <FinancialCard cardTitle="剩於點數" cardValue="0.00" />
+        <FinancialCard cardTitle="已使用" cardValue="0.00" />
+      </div>
       <div class="d-block text-left mt-2">
         <el-checkbox class="login-checkbox" size="large">
           <div>開啟燃料點數自動充值。</div>
@@ -65,19 +69,21 @@ import FinancialCard from "@/components/FinancialCard.vue";
     <div class="mt-3 mb-5">
       <div class="flex items-center justify-between">
         <div class="text-left">
-          AiHunter 使用有效期<br>
-          <span class="text-red-600 text-xs"
-            >(過期後，系統將停止交易，並且中斷獎金分配權)</span
-          >
+          AiHunter 使用有效期
+          <div class="text-red-600 text-xs">
+            ※過期後，系統將停止交易，並且中斷獎金分配權
+          </div>
         </div>
-        <font-awesome-icon :icon="['fas', 'plus']" />
+        <font-awesome-icon
+          class="mr-2"
+          @click="dialogVisibleTime = true"
+          :icon="['fas', 'plus']"
+        />
       </div>
-      <FinancialCard
-        totalNum="30天 00:00分"
-        totalTitle="剩於時數"
-        profitTitle="已使用時數"
-        profitNum="0天 00:00分"
-      />
+      <div class="grid grid-cols-2 gap-2">
+        <FinancialCard cardTitle="剩於時數" cardValue="0.00" />
+        <FinancialCard cardTitle="已使用時數" cardValue="0.00" />
+      </div>
       <div class="d-block text-left mt-2">
         <el-checkbox class="login-checkbox" size="large">
           <div>開啟使用有效期自動充值</div>
@@ -88,9 +94,14 @@ import FinancialCard from "@/components/FinancialCard.vue";
       </div>
     </div>
   </div>
+  <FinancialPointRecharge
+    :dialogVisible="dialogVisiblePoint"
+    @dialogFeedBack="dialogFeedBack"
+  />
+  <FinancialTimeRecharge
+    :dialogVisible="dialogVisibleTime"
+    @dialogFeedBack="dialogFeedBack"
+  />
 </template>
 
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>

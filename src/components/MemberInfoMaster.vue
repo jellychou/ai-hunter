@@ -88,11 +88,11 @@ const handleClick = () => {
           <MemberInfoMasterFollow />
         </el-tab-pane>
       </el-tabs>
-      <div class="flex items-center justify-center button-footer">
+      <!-- <div class="flex items-center justify-center button-footer">
         <el-button class="theme-bg-color w-3/5" @click="handleClose"
           >關閉</el-button
         >
-      </div>
+      </div> -->
     </div>
   </el-dialog>
 </template>

@@ -30,6 +30,7 @@ watch(
           'grid',
           'justify-items-center',
           'content-center',
+          'text-sm',
           { 'text-yellow-400': thisRouter === '/' },
         ]"
       >
@@ -42,6 +43,7 @@ watch(
           'grid',
           'justify-items-center',
           'content-center',
+          'text-sm',
           { 'text-yellow-400': thisRouter === '/deal' },
         ]"
       >
@@ -54,6 +56,7 @@ watch(
           'grid',
           'justify-items-center',
           'content-center',
+          'text-sm',
           { 'text-yellow-400': thisRouter === '/scanning' },
         ]"
       >
@@ -66,6 +69,7 @@ watch(
           'grid',
           'justify-items-center',
           'content-center',
+          'text-sm',
           { 'text-yellow-400': thisRouter === '/financial' },
         ]"
       >
@@ -78,6 +82,7 @@ watch(
           'grid',
           'justify-items-center',
           'content-center',
+          'text-sm',
           { 'text-yellow-400': thisRouter === '/wallet' },
         ]"
       >
@@ -94,7 +99,7 @@ watch(
   bottom: 0;
   right: 0;
   left: 0;
-  height: 50px;
+  height: 45px;
   width: 100%;
   background-color: #4a5516;
   .footer-list {
