@@ -10,7 +10,6 @@ body {
 //   }
 // }
 
-
 .el-input__prefix {
   .el-input__prefix-inner {
     display: flex;
@@ -19,6 +18,9 @@ body {
 }
 
 .el-dialog {
+  .el-dialog__header {
+    margin-right: 0;
+  }
   // min-height: 30%;
   .el-dialog__title {
     font-weight: 800;
@@ -77,4 +79,3 @@ body {
 .content-body {
   overflow-y: scroll;
 }
-

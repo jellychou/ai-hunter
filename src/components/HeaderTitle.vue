@@ -1,4 +1,5 @@
 <script setup>
+import { getHeaderTitle } from "@/utils/value";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -6,13 +7,10 @@ const router = useRouter();
 
 <template>
   <div class="header flex items-center justify-between px-2">
-    <div></div>
-    <img
-      class="header-logo"
-      @click="router.push('/')"
-      src="@/assets/image/header-logo.png"
-      alt="logo"
-    />
+    <el-icon size="large" @click="router.push('/')">
+      <arrow-left-bold />
+    </el-icon>
+    <div>{{ getHeaderTitle(router.currentRoute.value.path) }}</div>
     <div></div>
   </div>
 </template>

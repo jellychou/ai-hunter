@@ -1,6 +1,7 @@
 <script setup>
 import Header from "@/components/Header.vue";
 import HeaderLogo from "@/components/HeaderLogo.vue";
+import HeaderTitle from "@/components/HeaderTitle.vue";
 import Footer from "@/components/Footer.vue";
 import LoadingPage from "@/components/LoadingPage.vue";
 import { useRouter } from "vue-router";
@@ -23,29 +24,43 @@ const router = useRouter();
 //   };
 // });
 
-const getPageHeader = computed(() => {
-  const showHeader = ["/scanning", "/financial", "/wallet"];
+// const getPageHeader = computed(() => {
+//   const showHeader = ["/", "/scanning", "/financial", "/wallet"];
+//   const isShow = showHeader.some((e) => {
+//     return e === router.currentRoute.value.path;
+//   });
+//   return isShow;
+// });
+
+const getPageHeaderLogo = computed(() => {
+  const showHeader = [
+    "/deal",
+    "/scanning",
+    "/financial",
+    "/wallet",
+    "/memberInfo",
+  ];
   const isShow = showHeader.some((e) => {
     return e === router.currentRoute.value.path;
   });
   return isShow;
 });
 
-const getShowHeader = computed(() => {
-  const showHeader = ["/", "/deal", "/scanning", "/financial", "/wallet"];
+const getPageHeaderTitle = computed(() => {
+  const showHeader = ["/masterSort", "/contractTrade", "/friendList"];
   const isShow = showHeader.some((e) => {
     return e === router.currentRoute.value.path;
   });
-  console.log();
   return isShow;
 });
 </script>
 <template>
   <LoadingPage />
-  <Header v-show="router.currentRoute.value.path === '/'" />
-  <HeaderLogo v-show="getPageHeader" />
+  <Header v-if="router.currentRoute.value.path === '/'" />
+  <HeaderLogo v-else-if="getPageHeaderLogo" />
+  <HeaderTitle v-else-if="getPageHeaderTitle" />
   <transition name="el-fade-in-linear">
-    <div class="px-2 mt-2" :class="{ content: getShowHeader }">
+    <div class="px-2 mt-2 content">
       <router-view></router-view>
     </div>
   </transition>

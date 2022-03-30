@@ -17,6 +17,11 @@ const routes = [
     component: () => import("@/views/NoticeList.vue"), // 通知
   },
   {
+    path: "/masterSort",
+    name: "MasterSort",
+    component: () => import("@/views/MasterSort.vue"), // 高手排行
+  },
+  {
     path: "/deal",
     name: "Deal",
     component: () => import("@/views/Deal.vue"), // 交易

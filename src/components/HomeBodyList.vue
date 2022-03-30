@@ -6,7 +6,7 @@ const route = useRouter();
 const cardList = reactive([
   {
     title: "高手排行",
-    path: "",
+    path: "/masterSort",
   },
   {
     title: "現貨網格",

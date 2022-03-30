@@ -1,9 +1,13 @@
 <script setup>
+import FriendAddDialog from "@/components/FriendAddDialog.vue";
 import { Search, CirclePlusFilled } from "@element-plus/icons-vue";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
 
-const router = useRouter();
+const dialogVisible = ref(false);
+
+const dialogFeedBack = () => {
+  dialogVisible.value = false;
+};
 
 const data = ref([
   {
@@ -122,19 +126,15 @@ const data = ref([
 </script>
 
 <template>
-  <div class="header flex items-center justify-between px-2">
-    <el-icon size="large" @click="router.push('/')">
-      <arrow-left-bold />
-    </el-icon>
-    <div>好友列表</div>
-  </div>
-  <div class="content-body my-3 px-3">
+  <div class="px-1">
     <el-input :prefix-icon="Search" placeholder="搜尋名稱 / 等級 / 信箱" />
     <div class="flex items-center justify-between my-3 px-2">
       <div class="text-gray-400 text-sm">名稱 / 等級</div>
       <div class="text-gray-400 text-sm">充值人數 / 推薦總數</div>
     </div>
-    <el-icon class="add-icon text-4xl theme-text-color"
+    <el-icon
+      @click="dialogVisible = true"
+      class="add-icon text-4xl theme-text-color"
       ><circle-plus-filled
     /></el-icon>
     <div class="px-2 overflow-y-scroll h-5/6">
@@ -165,6 +165,10 @@ const data = ref([
       </div>
     </div>
   </div>
+  <FriendAddDialog
+    :dialogVisible="dialogVisible"
+    @dialogFeedBack="dialogFeedBack"
+  />
 </template>
 
 <style lang="scss" scoped>
@@ -174,8 +178,8 @@ const data = ref([
 }
 
 .add-icon {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 70px;
   right: 20px;
 }
 </style>
