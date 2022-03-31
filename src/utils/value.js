@@ -16,15 +16,25 @@ export function getValueColor(val) {
 
 export function getHeaderTitle(val) {
   let title = "";
+  console.log(val);
   switch (val) {
-    case "/friendList":
-      title = "好友列表";
+    case "masterSort":
+      title = "高手排行";
       break;
-    case "/contractTrade":
+    case "sportGrid":
+      title = "現貨網格";
+      break;
+    case "contractTrade":
       title = "合約交易";
       break;
-    case "/masterSort":
-      title = "高手排行";
+    case "friendList":
+      title = "好友列表";
+      break;
+    case "wallet":
+      title = "我的錢包";
+      break;
+    case "memberInfo":
+      title = "會員資訊";
       break;
 
     default:

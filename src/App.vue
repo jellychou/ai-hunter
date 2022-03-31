@@ -53,6 +53,14 @@ const getPageHeaderTitle = computed(() => {
   });
   return isShow;
 });
+
+const getOverflow = computed(() => {
+  const showHeader = ["/financial"];
+  const isShow = showHeader.some((e) => {
+    return e === router.currentRoute.value.path;
+  });
+  return isShow;
+});
 </script>
 <template>
   <LoadingPage />
@@ -60,7 +68,7 @@ const getPageHeaderTitle = computed(() => {
   <HeaderLogo v-else-if="getPageHeaderLogo" />
   <HeaderTitle v-else-if="getPageHeaderTitle" />
   <transition name="el-fade-in-linear">
-    <div class="px-2 mt-2 content">
+    <div class="px-2 mt-2 content" :class="{ 'content-overflow': getOverflow }">
       <router-view></router-view>
     </div>
   </transition>
@@ -95,6 +103,9 @@ const getPageHeaderTitle = computed(() => {
   bottom: 45px;
   left: 0;
   right: 0;
+}
+
+.content-overflow {
   overflow-y: scroll;
 }
 </style>

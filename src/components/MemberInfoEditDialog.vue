@@ -26,9 +26,9 @@ const handleClose = () => {
     <div class="mx-3">
       <el-input class="my-2" size="large" placeholder="輸入暱稱" />
       <el-input
-        class="my-2"
-        size="large"
+        class="my-2 rounded border border-neutral-900"
         type="textarea"
+        rows="4"
         placeholder="輸入簡單介紹"
       />
     </div>

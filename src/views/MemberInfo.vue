@@ -45,8 +45,8 @@ const dialogFeedBack = (Boolean) => {
       >
     </div>
   </div>
-  <div class="content-body my-3 px-3">
-    <div class="card rounded p-3 flex">
+  <div class="content-body my-3 px-1">
+    <div class="card rounded px-3 py-2 flex">
       <img
         class="member-info-head rounded"
         src="@/assets/image/banner.jpg"
@@ -56,8 +56,8 @@ const dialogFeedBack = (Boolean) => {
         <span class="font-bold">史迪奇</span><br />
         <span>等級：LV4</span><br />
         <span>好友：8 人</span><br />
-        <span>專職合約操盤的星際寶貝 想賺錢跟我來就對了</span>
-        <div class="flex items-center justify-end">
+        <div class="flex items-end justify-between">
+          <span>專職合約操盤的星際寶貝 想賺錢跟我來就對了</span>
           <el-icon class="text-white text-2xl" @click="editInfo = true"
             ><edit
           /></el-icon>

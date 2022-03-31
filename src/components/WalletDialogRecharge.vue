@@ -1,4 +1,5 @@
 <script setup>
+import WalletSafeCer from "../components/WalletSafeCer.vue";
 import { FullScreen } from "@element-plus/icons-vue";
 import { defineProps, ref, defineEmits, reactive } from "vue";
 
@@ -15,6 +16,12 @@ const value1 = ref([]);
 
 const handleClose = () => {
   emit("dialogFeedBack", false);
+};
+
+const dialogSafe = ref(false);
+
+const dialogSafeFeedBack = () => {
+  dialogSafe.value = false;
 };
 
 const options = [
@@ -118,9 +125,15 @@ const form = reactive([]);
       </div>
     </el-form>
     <template #footer>
-      <el-button class="theme-bg-color w-3/5">確定</el-button>
+      <el-button class="theme-bg-color w-3/5" @click="dialogSafe = true"
+        >確定</el-button
+      >
     </template>
   </el-dialog>
+  <WalletSafeCer
+    :dialogVisible="dialogSafe"
+    @dialogFeedBack="dialogSafeFeedBack"
+  />
 </template>
 
 <style lang="scss" scoped></style>

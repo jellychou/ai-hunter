@@ -20,7 +20,7 @@ const dialogFeedBack = (Boolean) => {
     錢包
   </div>
   <div
-    class="font-bold flex items-center justify-between py-1 px-2 my-3 rounded"
+    class="font-bold flex items-center justify-between px-2 my-2 rounded"
     style="background-color: #505c172e"
   >
     <div>資產</div>
@@ -44,7 +44,7 @@ const dialogFeedBack = (Boolean) => {
     </div>
   </div>
   <div
-    class="font-bold flex items-center justify-between px-2 py-1 my-3 rounded"
+    class="font-bold flex items-center justify-between px-2 my-3 rounded"
     style="background-color: #505c172e"
   >
     <div>可用餘額</div>

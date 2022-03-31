@@ -4,6 +4,7 @@ import views from "./views";
 export default createStore({
   state: {
     isOpenPage: false,
+    pageTitle: "",
     dialog: {
       isDialogOpen: false,
       buttonStatus: 0, // 0取消 1確認
@@ -19,8 +20,15 @@ export default createStore({
       state.dialog.buttonStatus = dialog.buttonStatus;
       state.dialog.title = dialog.title;
     },
+    SET_PAGE_TITLE(state, val) {
+      state.pageTitle = val;
+    },
   },
-  actions: {},
+  actions: {
+    FETCH_PAGE_TITLE(context, title) {
+      context.commit("SET_PAGE_TITLE", title);
+    },
+  },
   modules: {
     views,
   },

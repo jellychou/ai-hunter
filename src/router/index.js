@@ -56,11 +56,6 @@ const routes = [
     name: "MemberInfo",
     component: () => import("@/views/MemberInfo.vue"), // 會員資訊
   },
-  {
-    path: "/spotGrid",
-    name: "SpotGrid",
-    component: () => import("@/views/SpotGrid.vue"), //現貨網格
-  },
 ];
 
 const router = createRouter({

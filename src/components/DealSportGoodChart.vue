@@ -1,6 +1,7 @@
 <script setup>
-import { ref, reactive, computed } from "vue";
-const usdtType = ref("BTC");
+import { reactive, computed } from "vue";
+import TabMenu from "../components/TabMenu.vue";
+// const usdtType = ref("BTC");
 
 const data = reactive([
   {
@@ -45,11 +46,14 @@ const riseData = computed(() => data.filter((e) => e.status === "rise"));
 const fallData = computed(() => data.filter((e) => e.status === "fall"));
 
 console.log(riseData, fallData);
+
+const tabItems = reactive(["BTC/USDT", "ETH/USDT"]);
 </script>
 
 <template>
   <div class="card text-right py-2 px-3">
-    <span
+    <TabMenu :items="tabItems" @getTabValue="getTabValue" />
+    <!-- <span
       @click="usdtType = 'BTC'"
       :class="['pr-5', { 'underline decoration-sky-600': usdtType === 'BTC' }]"
     >
@@ -60,7 +64,7 @@ console.log(riseData, fallData);
       :class="{ 'underline decoration-sky-600': usdtType === 'ETH' }"
     >
       ETH/USDT
-    </span>
+    </span> -->
     <div class="flex my-3">
       <div class="text-left w-3/4">
         <span class="font-bold text-red-600 text-lg">44,510.29</span><br />

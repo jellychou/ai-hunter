@@ -14,83 +14,78 @@ const dialogFeedBack = () => {
 </script>
 
 <template>
-  <div class="header flex items-center justify-center px-2">
-    <img src="@/assets/image/header-logo.png" alt="" />
+  <div class="mt-3 mb-5">
+    <div class="text-left">全部獲利</div>
+    <div class="grid grid-cols-2 gap-2">
+      <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
+      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+    </div>
   </div>
-  <div>
-    <div class="mt-3 mb-5">
-      <div class="text-left">全部獲利</div>
-      <div class="grid grid-cols-2 gap-2">
-        <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
-        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+  <div class="mt-3 mb-5">
+    <div class="text-left">現貨獲利</div>
+    <div class="grid grid-cols-2 gap-2">
+      <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
+      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+    </div>
+  </div>
+  <div class="mt-3 mb-5">
+    <div class="text-left">合約獲利</div>
+    <div class="grid grid-cols-2 gap-2">
+      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+    </div>
+  </div>
+  <hr />
+  <div class="mt-3 mb-5">
+    <div class="flex items-center justify-between">
+      <div>
+        燃料點數
+        <span class="text-red-600 text-xs">※點數不足時，系統將停止交易</span>
+      </div>
+      <font-awesome-icon
+        class="mr-2"
+        :icon="['fas', 'plus']"
+        @click="dialogVisiblePoint = true"
+      />
+    </div>
+    <div class="grid grid-cols-2 gap-2">
+      <FinancialCard cardTitle="剩於點數" cardValue="0.00" />
+      <FinancialCard cardTitle="已使用" cardValue="0.00" />
+    </div>
+    <div class="d-block text-left mt-2">
+      <el-checkbox class="login-checkbox" size="large">
+        <div>開啟燃料點數自動充值。</div>
+      </el-checkbox>
+      <div class="text-red-600 text-xs">
+        (請確保您的錢包有足夠餘額此功能開啟後，當燃料點數低於50點，系統將自動為您充值100點，若錢包餘額不足，將無法執行。)
       </div>
     </div>
-    <div class="mt-3 mb-5">
-      <div class="text-left">現貨獲利</div>
-      <div class="grid grid-cols-2 gap-2">
-        <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
-        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
-      </div>
-    </div>
-    <div class="mt-3 mb-5">
-      <div class="text-left">合約獲利</div>
-      <div class="grid grid-cols-2 gap-2">
-        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
-        <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
-      </div>
-    </div>
-    <hr />
-    <div class="mt-3 mb-5">
-      <div class="flex items-center justify-between">
-        <div>
-          燃料點數
-          <span class="text-red-600 text-xs">※點數不足時，系統將停止交易</span>
-        </div>
-        <font-awesome-icon
-          class="mr-2"
-          :icon="['fas', 'plus']"
-          @click="dialogVisiblePoint = true"
-        />
-      </div>
-      <div class="grid grid-cols-2 gap-2">
-        <FinancialCard cardTitle="剩於點數" cardValue="0.00" />
-        <FinancialCard cardTitle="已使用" cardValue="0.00" />
-      </div>
-      <div class="d-block text-left mt-2">
-        <el-checkbox class="login-checkbox" size="large">
-          <div>開啟燃料點數自動充值。</div>
-        </el-checkbox>
+  </div>
+  <hr />
+  <div class="mt-3 mb-5">
+    <div class="flex items-center justify-between">
+      <div class="text-left">
+        AiHunter 使用有效期
         <div class="text-red-600 text-xs">
-          (請確保您的錢包有足夠餘額此功能開啟後，當燃料點數低於50點，系統將自動為您充值100點，若錢包餘額不足，將無法執行。)
+          ※過期後，系統將停止交易，並且中斷獎金分配權
         </div>
       </div>
+      <font-awesome-icon
+        class="mr-2"
+        @click="dialogVisibleTime = true"
+        :icon="['fas', 'plus']"
+      />
     </div>
-    <hr />
-    <div class="mt-3 mb-5">
-      <div class="flex items-center justify-between">
-        <div class="text-left">
-          AiHunter 使用有效期
-          <div class="text-red-600 text-xs">
-            ※過期後，系統將停止交易，並且中斷獎金分配權
-          </div>
-        </div>
-        <font-awesome-icon
-          class="mr-2"
-          @click="dialogVisibleTime = true"
-          :icon="['fas', 'plus']"
-        />
-      </div>
-      <div class="grid grid-cols-2 gap-2">
-        <FinancialCard cardTitle="剩於時數" cardValue="0.00" />
-        <FinancialCard cardTitle="已使用時數" cardValue="0.00" />
-      </div>
-      <div class="d-block text-left mt-2">
-        <el-checkbox class="login-checkbox" size="large">
-          <div>開啟使用有效期自動充值</div>
-        </el-checkbox>
-        <div class="text-red-600 text-xs">
-          (請確保您的錢包有足夠餘額此功能開啟後，當使用有效期低於24小時，系統將自動為您充值30日，若錢包餘額不足，將無法執行。)
-        </div>
+    <div class="grid grid-cols-2 gap-2">
+      <FinancialCard cardTitle="剩於時數" cardValue="0.00" />
+      <FinancialCard cardTitle="已使用時數" cardValue="0.00" />
+    </div>
+    <div class="d-block text-left mt-2">
+      <el-checkbox class="login-checkbox" size="large">
+        <div>開啟使用有效期自動充值</div>
+      </el-checkbox>
+      <div class="text-red-600 text-xs">
+        (請確保您的錢包有足夠餘額此功能開啟後，當使用有效期低於24小時，系統將自動為您充值30日，若錢包餘額不足，將無法執行。)
       </div>
     </div>
   </div>

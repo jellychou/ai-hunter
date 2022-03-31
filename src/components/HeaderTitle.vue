@@ -1,8 +1,10 @@
 <script setup>
-import { getHeaderTitle } from "@/utils/value";
+import { getHeaderTitle } from "../utils/value";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 
 const router = useRouter();
+const { state } = useStore();
 </script>
 
 <template>
@@ -10,7 +12,7 @@ const router = useRouter();
     <el-icon size="large" @click="router.push('/')">
       <arrow-left-bold />
     </el-icon>
-    <div>{{ getHeaderTitle(router.currentRoute.value.path) }}</div>
+    <div>{{ getHeaderTitle(state.pageTitle) }}</div>
     <div></div>
   </div>
 </template>

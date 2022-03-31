@@ -137,7 +137,7 @@ const data = ref([
       class="add-icon text-4xl theme-text-color"
       ><circle-plus-filled
     /></el-icon>
-    <div class="px-2 overflow-y-scroll h-5/6">
+    <div class="friend-list__body px-2 overflow-y-scroll">
       <div
         class="flex items-center justify-between mb-2"
         v-for="item in data"
@@ -145,7 +145,7 @@ const data = ref([
       >
         <div class="flex">
           <img
-            class="friend-list-head rounded-full"
+            class="friend-list__head rounded-full"
             src="../assets/image/banner.jpg"
             alt=""
           />
@@ -172,9 +172,13 @@ const data = ref([
 </template>
 
 <style lang="scss" scoped>
-.friend-list-head {
+.friend-list__head {
   height: 50px;
   width: 50px;
+}
+
+.friend-list__body {
+  height: calc(100vh - 180px);
 }
 
 .add-icon {

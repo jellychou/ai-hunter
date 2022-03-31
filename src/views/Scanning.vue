@@ -3,7 +3,9 @@
 <template>
   <div class="scanning flex items-center justify-center h-full">
     <div>
-      <div class="scanning-qr-code block m-auto mb-10 rounded-xl"></div>
+      <div class="scanning-qr-code block m-auto mb-10 rounded-xl flex items-center justify-center">
+        <img src="@/assets/image/qrcode.png" alt="" />
+      </div>
       <div class="flex items-center justify-around mt-10">
         <div>
           <div

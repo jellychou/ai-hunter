@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits, reactive } from "vue";
 
 const emit = defineEmits(["dialogFeedBack"]);
 
@@ -13,6 +13,25 @@ defineProps({
 const handleClose = () => {
   emit("dialogFeedBack", false);
 };
+
+const thirdItem = reactive([
+  {
+    name: "twitter",
+    src: require("@/assets/image/tw-icon.png"),
+  },
+  {
+    name: "facebook",
+    src: require("@/assets/image/fb-icon.png"),
+  },
+  {
+    name: "weChat",
+    src: require("@/assets/image/chat-icon.png"),
+  },
+  {
+    name: "line",
+    src: require("@/assets/image/line-icon.png"),
+  },
+]);
 </script>
 
 <template>
@@ -35,15 +54,26 @@ const handleClose = () => {
       <el-input type="text" class="w-3/4">
         <template #append>點我複製</template>
       </el-input>
-      <div class="flex items-center justify-center my-5">
-        <img src="@/assets/image/tw-icon.png" alt="" />
-        <img src="@/assets/image/fb-icon.png" alt="" />
-        <img src="@/assets/image/chat-icon.png" alt="" />
-        <img src="@/assets/image/line-icon.png" alt="" />
+      <div class="flex items-center justify-evenly my-5 third">
+        <span class="third-icon" v-for="item in thirdItem" :key="item.name">
+          <img :src="item.src" :alt="item.name" />
+        </span>
       </div>
       <div class="text-sm theme-bg-color rounded px-3 py-2">保存 QR code</div>
     </div>
   </el-dialog>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.third {
+  width: 72%;
+  .third-icon {
+    height: 60px;
+    width: 60px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+</style>
