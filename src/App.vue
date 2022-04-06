@@ -96,7 +96,7 @@ const getOverflow = computed(() => {
 }
 
 .content {
-  position: fixed;
+  position: absolute;
   top: 45px;
   bottom: 45px;
   left: 0;
@@ -104,7 +104,7 @@ const getOverflow = computed(() => {
 }
 
 .content-admin {
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 45px;
   left: 0;
@@ -112,6 +112,6 @@ const getOverflow = computed(() => {
 }
 
 .content-overflow {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 </style>
