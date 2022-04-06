@@ -60,10 +60,9 @@ const mailList = reactive([
       <div class="import-color px-2 py-1 rounded text-sm">全部清空</div>
     </div>
   </div>
-  <!-- <h1 class="my-3 text-2xl font-black">通知</h1> -->
   <div class="my-2">
     <div
-      class="flex items-center mb-2 shadow-lg rounded-lg"
+      class="flex items-center mb-2 border-b"
       v-for="mail in mailList"
       :key="mail.title"
     >
@@ -79,10 +78,12 @@ const mailList = reactive([
           :icon="['far', 'envelope']"
         />
       </div>
-      <div class="text-left w-5/6 py-1">
-        <div class="font-bold">{{ mail.title }}</div>
+      <div class="text-left w-5/6 py-1 pr-2">
+        <div class="flex items-center justify-between">
+          <div class="font-bold">{{ mail.title }}</div>
+          <div class="text-xs">{{ mail.time }}</div>
+        </div>
         <div class="text-sm leading-none">{{ mail.content }}</div>
-        <div>{{ mail.time }}</div>
       </div>
     </div>
   </div>

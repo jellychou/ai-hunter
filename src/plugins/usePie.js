@@ -34,7 +34,6 @@ const usePie = (element) => {
     const option = {
       title: {
         left: "center",
-        // text: "7日",
       },
       grid: {
         right: 0,

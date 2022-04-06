@@ -47,7 +47,7 @@ const getPageHeaderTitle = computed(() => {
 });
 
 const getOverflow = computed(() => {
-  const showHeader = ["/financial", "/noticeList"];
+  const showHeader = ["/financial", "/noticeList", "/wallet", "/"];
   const isShow = showHeader.some((e) => {
     return e === router.currentRoute.value.path;
   });
@@ -96,7 +96,7 @@ const getOverflow = computed(() => {
 }
 
 .content {
-  position: absolute;
+  position: fixed;
   top: 45px;
   bottom: 45px;
   left: 0;
@@ -104,7 +104,7 @@ const getOverflow = computed(() => {
 }
 
 .content-admin {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 45px;
   left: 0;
@@ -112,6 +112,6 @@ const getOverflow = computed(() => {
 }
 
 .content-overflow {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 </style>

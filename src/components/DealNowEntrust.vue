@@ -24,7 +24,7 @@ const data = reactive([
 </script>
 
 <template>
-  <div class="px-2 h-1/4 overflow-y-scroll" style="height: 25vh">
+  <div class="px-2 overflow-y-auto" style="height: 25vh">
     <div v-for="item in data" :key="item.name" class="mt-2">
       <div class="flex items-start justify-between text-left">
         <div
