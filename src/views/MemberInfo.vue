@@ -99,7 +99,6 @@ const dialogFeedBack = (Boolean) => {
         <div class="text-sm text-left mb-2">語言</div>
         <el-select
           class="w-full"
-          v-model="value1"
           multiple
           size="large"
           placeholder="請選擇語言"

@@ -1,4 +1,5 @@
 <script setup>
+import LoginForgetDialog from "./LoginForgetDialog.vue";
 import { ref, defineProps, defineEmits } from "vue";
 
 defineProps({
@@ -29,6 +30,12 @@ const countDown = () => {
     clearInterval(handTimeOut.value);
     isShowButton.value = false;
   }
+};
+
+const forgetPassword = ref(false);
+
+const dialogFeedBack = () => {
+  forgetPassword.value = true;
 };
 </script>
 
@@ -61,12 +68,7 @@ const countDown = () => {
           placeholder="請輸入Google Authenticator驗證"
         />
         <div class="text-right">
-          <a
-            @click="forgetPassword = true"
-            class="underline text-xs"
-            href="javascript:;"
-            >我要綁定</a
-          >
+          <a class="underline text-xs" href="javascript:;">我要綁定</a>
         </div>
       </div>
       <span>電子信箱驗證</span>
@@ -99,6 +101,10 @@ const countDown = () => {
       </div>
     </template>
   </el-dialog>
+  <LoginForgetDialog
+    :dialogVisible="forgetPassword"
+    @dialogFeedBack="dialogFeedBack"
+  />
 </template>
 
 <style lang="scss" scoped></style>

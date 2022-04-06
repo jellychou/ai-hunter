@@ -11,7 +11,7 @@
           <div
             class="h-14 w-14 rounded-full theme-bg-color flex items-center justify-center text-3xl"
           >
-            <font-awesome-icon size="large" :icon="['fas', 'qrcode']" />
+            <font-awesome-icon :icon="['fas', 'qrcode']" />
           </div>
           <span>收款</span>
         </div>
@@ -19,7 +19,7 @@
           <div
             class="h-14 w-14 rounded-full theme-bg-color flex items-center justify-center text-3xl"
           >
-            <font-awesome-icon size="large" :icon="['fas', 'image']" />
+            <font-awesome-icon :icon="['fas', 'image']" />
           </div>
           <span>相簿</span>
         </div>

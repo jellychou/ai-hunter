@@ -10,10 +10,6 @@ const form = ref({
 
 const dialogVisible = ref(false);
 
-const openForgetPassword = () => {
-  dialogVisible.value = true;
-};
-
 const dialogFeedBack = (Boolean) => {
   if (!Boolean) return (dialogVisible.value = false);
   // confirm button click do some thing!
@@ -25,12 +21,14 @@ const dialogFeedBack = (Boolean) => {
     <h1 class="login-title mb-1">登入</h1>
     <el-input
       v-model="form.account"
+      size="large"
       class="login-input mb-3"
       placeholder="輸入帳號"
       type="text"
     />
     <el-input
       v-model="form.password"
+      size="large"
       class="mb-2"
       placeholder="輸入密碼"
       type="password"
@@ -39,7 +37,7 @@ const dialogFeedBack = (Boolean) => {
       <a
         class="text-blue-700 underline text-xs"
         href="javascript:;"
-        @click="openForgetPassword"
+        @click="dialogVisible = true;"
       >
         忘記密碼?
       </a>

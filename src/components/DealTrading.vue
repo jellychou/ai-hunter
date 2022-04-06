@@ -1,9 +1,9 @@
 <script setup>
-import DealEntrust from "./DealEntrust.vue";
-import DealSportGood from "./DealSportGood.vue";
+import DealTradingBTC from "./DealTradingBTC.vue";
+import DealTradingETH from "./DealTradingETH.vue";
 import { ref } from "vue";
 
-const activeName = ref("login");
+const activeName = ref("BTC");
 
 const handleClick = () => {
   console.log(123);
@@ -12,22 +12,22 @@ const handleClick = () => {
 
 <template>
   <div>
-    <!-- BTC/USDT ETH/USDT 現貨狀態 合約狀態 BTC/USDT ETH/USDT 當前委託(􏍗)
-    持有倉位(􏍗)  -->
     <h1 class="my-2 text-lg">
       即時交易狀態 <span class="text-sm">(歷史記錄)</span>
     </h1>
     <el-tabs
       v-model="activeName"
       type="card"
-      class="demo-tabs p-2"
+      class="demo-tabs py-2"
       @tab-click="handleClick"
     >
-      <el-tab-pane label="BTC/USDT" name="login">
-        <DealEntrust />
+      <el-tab-pane label="BTC/USDT" name="BTC">
+        <!-- BTC/USDT -->
+        <DealTradingBTC />
       </el-tab-pane>
-      <el-tab-pane label="ETH/USDT" name="register">
-        <DealSportGood />
+      <el-tab-pane label="ETH/USDT" name="ETH">
+        <!-- ETH/USDT -->
+        <DealTradingETH />
       </el-tab-pane>
     </el-tabs>
   </div>

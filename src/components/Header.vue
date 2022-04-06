@@ -1,18 +1,18 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import SetGoldKeyDialog from "./SetGoldKeyDialog.vue";
+import SetGoldKeyDialog from "@/components/SetGoldKeyDialog.vue";
+import AdminDialog from "@/components/AdminDialog.vue";
 
 const router = useRouter();
 
 const dialogVisible = ref(false);
+const adminDialogVisible = ref(false);
 
-const openSetKeyDialog = () => {
-  dialogVisible.value = true;
-};
 
 const dialogFeedBack = (Boolean) => {
-  if (!Boolean) return (dialogVisible.value = false);
+  if (!Boolean)
+    return (dialogVisible.value = false), (adminDialogVisible.value = false);
   // confirm button click do some thing!
 };
 </script>
@@ -25,11 +25,12 @@ const dialogFeedBack = (Boolean) => {
       src="@/assets/image/header-logo.png"
       alt="logo"
     />
+    <span @click="adminDialogVisible = true">登入/註冊</span>
     <div class="flex items-center">
       <a
         href="javascript:;"
         class="pr-3 theme-text-color"
-        @click="openSetKeyDialog"
+        @click="dialogVisible = true;"
         >設定金鑰</a
       >
       <div
@@ -48,6 +49,10 @@ const dialogFeedBack = (Boolean) => {
   </div>
   <SetGoldKeyDialog
     :dialogVisible="dialogVisible"
+    @dialogFeedBack="dialogFeedBack"
+  />
+  <AdminDialog
+    :dialogVisible="adminDialogVisible"
     @dialogFeedBack="dialogFeedBack"
   />
 </template>

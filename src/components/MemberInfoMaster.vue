@@ -1,11 +1,10 @@
 <script setup>
-import MemberInfoMasterArea from "@/components/MemberInfoMasterArea.vue";
-// import MemberInfoMasterApply from "@/components/MemberInfoMasterApply.vue";
+// import MemberInfoMasterArea from "@/components/MemberInfoMasterArea.vue";
+import MemberInfoMasterApply from "@/components/MemberInfoMasterApply.vue";
 </script>
-
 <template>
-  <MemberInfoMasterArea />
-  <!-- <MemberInfoMasterApply /> -->
+  <!-- <MemberInfoMasterArea /> -->
+  <MemberInfoMasterApply />
 </template>
 
 <style lang="scss">

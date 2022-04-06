@@ -16,7 +16,6 @@ export function getValueColor(val) {
 
 export function getHeaderTitle(val) {
   let title = "";
-  console.log(val);
   switch (val) {
     case "masterSort":
       title = "高手排行";
@@ -35,9 +34,6 @@ export function getHeaderTitle(val) {
       break;
     case "memberInfo":
       title = "會員資訊";
-      break;
-
-    default:
       break;
   }
   return title;

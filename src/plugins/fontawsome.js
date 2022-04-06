@@ -12,7 +12,7 @@ import {
   faCaretDown,
   faCaretUp,
   faArrowUp,
-  faArrowDown
+  faArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faEnvelope,

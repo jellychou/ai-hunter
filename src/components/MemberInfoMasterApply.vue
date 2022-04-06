@@ -1,5 +1,6 @@
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import MemberInfoEditDialog from "@/components/MemberInfoEditDialog.vue";
+import { defineProps, defineEmits, ref } from "vue";
 
 const emit = defineEmits(["dialogFeedBack"]);
 
@@ -12,6 +13,12 @@ defineProps({
 
 const handleClose = () => {
   emit("dialogFeedBack", false);
+};
+
+const editInfo = ref(false);
+
+const dialogFeedBack = () => {
+  editInfo.value = false;
 };
 </script>
 
@@ -97,10 +104,14 @@ const handleClose = () => {
     <template #footer>
       <div class="flex items-center justify-around">
         <el-button class="theme-bg-color w-2/5">送出申請</el-button>
-        <el-button class="import-color w-2/5">取消</el-button>
+        <el-button class="import-color w-2/5" @click="handleClose">取消</el-button>
       </div>
     </template>
   </el-dialog>
+  <MemberInfoEditDialog
+    :dialogVisible="editInfo"
+    @dialogFeedBack="dialogFeedBack"
+  />
 </template>
 
 <style lang="scss" scoped>

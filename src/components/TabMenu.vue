@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <ul class="flex items-center justify-evenly text-sm">
+  <ul class="flex items-center justify-between text-sm">
     <li
       @click="toTab(item, index)"
       class="border-b-2 pb-1"

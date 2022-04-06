@@ -3,8 +3,8 @@ import { defineProps } from "vue";
 
 defineProps({
   cardValue: {
-    type: Number,
-    default: 0,
+    type: String,
+    default: "",
   },
   cardTitle: {
     type: String,

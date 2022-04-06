@@ -56,14 +56,14 @@ const mailList = reactive([
       <arrow-left-bold />
     </el-icon>
     <div class="flex">
-      <div class="mr-2 theme-bg-color p-2 rounded text-sm">全部已讀</div>
-      <div class="import-color p-2 rounded text-sm">全部清空</div>
+      <div class="mr-2 theme-bg-color px-2 py-1 rounded text-sm">全部已讀</div>
+      <div class="import-color px-2 py-1 rounded text-sm">全部清空</div>
     </div>
   </div>
-  <h1 class="my-3 text-2xl font-black">通知</h1>
-  <div class="mb-20">
+  <!-- <h1 class="my-3 text-2xl font-black">通知</h1> -->
+  <div class="my-2">
     <div
-      class="card flex items-center mb-2 shadow-lg rounded-lg"
+      class="flex items-center mb-2 shadow-lg rounded-lg"
       v-for="mail in mailList"
       :key="mail.title"
     >
@@ -79,12 +79,10 @@ const mailList = reactive([
           :icon="['far', 'envelope']"
         />
       </div>
-      <div class="text-left w-5/6 leading-5 p-2">
-        <span class="font-bold">{{ mail.title }}</span
-        ><br />
-        <span>{{ mail.content }}</span
-        ><br />
-        <span>{{ mail.time }}</span>
+      <div class="text-left w-5/6 py-1">
+        <div class="font-bold">{{ mail.title }}</div>
+        <div class="text-sm leading-none">{{ mail.content }}</div>
+        <div>{{ mail.time }}</div>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 <script setup>
-import ContractSetDialog from "@/components/ContractSetDialog.vue";
+import ContractDealDialog from "@/components/ContractDealDialog.vue";
+import ContractMasterDialog from "@/components/ContractMasterDialog.vue";
 import ContractHistoryDialog from "@/components/ContractHistoryDialog.vue";
 import MasterHistoryDialog from "@/components/MasterHistoryDialog.vue";
 import { reactive, ref } from "vue";
@@ -33,17 +34,23 @@ const setData = reactive([
 ]);
 
 const setDialogVisible = ref(false);
+const dealDialogVisible = ref(false);
 const masterHistory = ref(false);
 const contractHistory = ref(false);
 
-const openSetDialog = () => {
+const openMasterSetDialog = () => {
   setDialogVisible.value = true;
+};
+
+const openDealSetDialog = () => {
+  dealDialogVisible.value = true;
 };
 
 const dialogFeedBack = () => {
   setDialogVisible.value = false;
   masterHistory.value = false;
   contractHistory.value = false;
+  dealDialogVisible.value = false;
 };
 </script>
 
@@ -109,7 +116,7 @@ const dialogFeedBack = () => {
         <td class="text-right">
           <span
             class="text-xs border border-neutral-900 rounded px-1"
-            @click="openSetDialog(item)"
+            @click="openMasterSetDialog(item)"
             >設定</span
           >
         </td>
@@ -156,15 +163,22 @@ const dialogFeedBack = () => {
           />
         </td>
         <td class="text-right">
-          <span class="text-xs border border-neutral-900 rounded px-1">
+          <span
+            class="text-xs border border-neutral-900 rounded px-1"
+            @click="openDealSetDialog(item)"
+          >
             設定
           </span>
         </td>
       </tr>
     </table>
   </div>
-  <ContractSetDialog
+  <ContractDealDialog
     :dialogVisible="setDialogVisible"
+    @dialogFeedBack="dialogFeedBack"
+  />
+  <ContractMasterDialog
+    :dialogVisible="dealDialogVisible"
     @dialogFeedBack="dialogFeedBack"
   />
   <ContractHistoryDialog

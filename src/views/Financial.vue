@@ -11,28 +11,30 @@ const dialogFeedBack = () => {
   dialogVisiblePoint.value = false;
   dialogVisibleTime.value = false;
 };
+
+const cardValue = ref("0.00");
 </script>
 
 <template>
   <div class="mt-3 mb-5">
     <div class="text-left">全部獲利</div>
     <div class="grid grid-cols-2 gap-2">
-      <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
-      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+      <FinancialCard cardTitle="獲利總計(USDT)" :cardValue="cardValue" />
+      <FinancialCard cardTitle="24H獲利" :cardValue="cardValue" />
     </div>
   </div>
   <div class="mt-3 mb-5">
     <div class="text-left">現貨獲利</div>
     <div class="grid grid-cols-2 gap-2">
-      <FinancialCard cardTitle="獲利總計(USDT)" cardValue="0.00" />
-      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+      <FinancialCard cardTitle="獲利總計(USDT)" :cardValue="cardValue" />
+      <FinancialCard cardTitle="24H獲利" :cardValue="cardValue" />
     </div>
   </div>
   <div class="mt-3 mb-5">
     <div class="text-left">合約獲利</div>
     <div class="grid grid-cols-2 gap-2">
-      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
-      <FinancialCard cardTitle="24H獲利" cardValue="0.00" />
+      <FinancialCard cardTitle="24H獲利" :cardValue="cardValue" />
+      <FinancialCard cardTitle="24H獲利" :cardValue="cardValue" />
     </div>
   </div>
   <hr />
@@ -49,8 +51,8 @@ const dialogFeedBack = () => {
       />
     </div>
     <div class="grid grid-cols-2 gap-2">
-      <FinancialCard cardTitle="剩於點數" cardValue="0.00" />
-      <FinancialCard cardTitle="已使用" cardValue="0.00" />
+      <FinancialCard cardTitle="剩於點數" :cardValue="cardValue" />
+      <FinancialCard cardTitle="已使用" :cardValue="cardValue" />
     </div>
     <div class="d-block text-left mt-2">
       <el-checkbox class="login-checkbox" size="large">
@@ -77,8 +79,8 @@ const dialogFeedBack = () => {
       />
     </div>
     <div class="grid grid-cols-2 gap-2">
-      <FinancialCard cardTitle="剩於時數" cardValue="0.00" />
-      <FinancialCard cardTitle="已使用時數" cardValue="0.00" />
+      <FinancialCard cardTitle="剩於時數" :cardValue="cardValue" />
+      <FinancialCard cardTitle="已使用時數" :cardValue="cardValue" />
     </div>
     <div class="d-block text-left mt-2">
       <el-checkbox class="login-checkbox" size="large">

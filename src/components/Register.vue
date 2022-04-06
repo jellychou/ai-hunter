@@ -1,4 +1,5 @@
 <script setup>
+import RegisterEmailValid from "@/components/RegisterEmailValid.vue";
 import { reactive, ref } from "vue";
 import { Avatar, Lock, Message } from "@element-plus/icons-vue";
 
@@ -13,6 +14,11 @@ const form = reactive({
 
 const checkPassword = ref("");
 const checkSafePassword = ref("");
+const dialogVisible = ref(false);
+
+const dialogFeedBack = () => {
+  dialogVisible.value = false;
+}
 </script>
 <template>
   <div class="register">
@@ -106,7 +112,7 @@ const checkSafePassword = ref("");
       />
     </div>
     <div class="my-5 flex item-center justify-around">
-      <el-button class="register-button__register w-2/5" size="large"
+      <el-button @click="dialogVisible = true" class="register-button__register w-2/5" size="large"
         >註冊加入</el-button
       >
       <el-button class="register-button__google w-2/5 ml-0" size="large"
@@ -114,6 +120,10 @@ const checkSafePassword = ref("");
       >
     </div>
   </div>
+  <RegisterEmailValid
+    :dialogVisible="dialogVisible"
+    @dialogFeedBack="dialogFeedBack"
+  />
 </template>
 
 <style lang="scss" scoped>
@@ -141,7 +151,7 @@ const checkSafePassword = ref("");
     background-color: rgb(214, 65, 65);
     color: #ffffff;
   }
-  
+
   .isValid {
     color: #4a5516;
   }

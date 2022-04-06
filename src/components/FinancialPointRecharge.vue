@@ -38,7 +38,7 @@ const handleClose = () => {
           point="100"
           usdt="100"
           pointUnit="天"
-          mark="請於40天內使用完畢，過期即失效。"
+          mark="燃料點數使用於跟單消耗。"
         />
         <FinancialRechargeCard
           @click="isActive = 1"
@@ -46,7 +46,7 @@ const handleClose = () => {
           point="300"
           usdt="300"
           pointUnit="天"
-          mark="請於40天內使用完畢，過期即失效。"
+          mark="燃料點數使用於跟單消耗。"
         />
         <FinancialRechargeCard
           @click="isActive = 2"
@@ -54,7 +54,7 @@ const handleClose = () => {
           point="1000"
           usdt="1000"
           pointUnit="天"
-          mark="請於40天內使用完畢，過期即失效。"
+          mark="燃料點數使用於跟單消耗。"
         />
       </div>
 

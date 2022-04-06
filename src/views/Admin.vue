@@ -2,25 +2,28 @@
 import Login from "@/components/Login.vue";
 import Register from "@/components/Register.vue";
 import { ref } from "vue";
+import { useStore } from "vuex";
 
-const activeName = ref("login");
+const store = useStore();
+const { state } = useStore();
 
-const handleClick = () => {
-  console.log(123);
+const tabActive = ref(state.isAdminType);
+
+const handleClick = (val) => {
+  store.dispatch("FETCH_ADMIN_TYPE", val);
 };
 </script>
 
 <template>
-  <el-tabs
-    v-model="activeName"
-    type="card"
-    class="demo-tabs p-2"
-    @tab-click="handleClick"
-  >
-    <el-tab-pane label="會員登入" name="login">
+  <el-tabs v-model="tabActive" type="card" class="demo-tabs p-2">
+    <el-tab-pane label="會員登入" name="login" @click="handleClick('login')">
       <Login />
     </el-tab-pane>
-    <el-tab-pane label="會員註冊" name="register">
+    <el-tab-pane
+      label="會員註冊"
+      name="register"
+      @click="handleClick('register')"
+    >
       <Register />
     </el-tab-pane>
   </el-tabs>
@@ -61,6 +64,4 @@ const handleClick = () => {
     }
   }
 }
-
-
 </style>

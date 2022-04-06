@@ -24,14 +24,6 @@ const router = useRouter();
 //   };
 // });
 
-// const getPageHeader = computed(() => {
-//   const showHeader = ["/", "/scanning", "/financial", "/wallet"];
-//   const isShow = showHeader.some((e) => {
-//     return e === router.currentRoute.value.path;
-//   });
-//   return isShow;
-// });
-
 const getPageHeaderLogo = computed(() => {
   const showHeader = [
     "/deal",
@@ -55,7 +47,7 @@ const getPageHeaderTitle = computed(() => {
 });
 
 const getOverflow = computed(() => {
-  const showHeader = ["/financial"];
+  const showHeader = ["/financial", "/noticeList"];
   const isShow = showHeader.some((e) => {
     return e === router.currentRoute.value.path;
   });
@@ -68,7 +60,13 @@ const getOverflow = computed(() => {
   <HeaderLogo v-else-if="getPageHeaderLogo" />
   <HeaderTitle v-else-if="getPageHeaderTitle" />
   <transition name="el-fade-in-linear">
-    <div class="px-2 mt-2 content" :class="{ 'content-overflow': getOverflow }">
+    <div
+      class="px-2 mt-2 content"
+      :class="{
+        'content-overflow': getOverflow,
+        'content-admin': router.currentRoute.value.path === '/admin',
+      }"
+    >
       <router-view></router-view>
     </div>
   </transition>
@@ -100,6 +98,14 @@ const getOverflow = computed(() => {
 .content {
   position: absolute;
   top: 45px;
+  bottom: 45px;
+  left: 0;
+  right: 0;
+}
+
+.content-admin {
+  position: absolute;
+  top: 0;
   bottom: 45px;
   left: 0;
   right: 0;

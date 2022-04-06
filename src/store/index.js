@@ -5,6 +5,7 @@ export default createStore({
   state: {
     isOpenPage: false,
     pageTitle: "",
+    isAdminType: "login",
     dialog: {
       isDialogOpen: false,
       buttonStatus: 0, // 0取消 1確認
@@ -23,10 +24,17 @@ export default createStore({
     SET_PAGE_TITLE(state, val) {
       state.pageTitle = val;
     },
+    SET_ADMIN_TYPE(state, type) {
+      console.log(type);
+      state.isAdminType = type;
+    },
   },
   actions: {
     FETCH_PAGE_TITLE(context, title) {
       context.commit("SET_PAGE_TITLE", title);
+    },
+    FETCH_ADMIN_TYPE(context, type) {
+      context.commit("SET_ADMIN_TYPE", type);
     },
   },
   modules: {

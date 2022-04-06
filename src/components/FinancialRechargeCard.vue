@@ -18,6 +18,10 @@ defineProps({
     type: String,
     default: "點",
   },
+  mark: {
+    type: String,
+    default: "",
+  },
 });
 </script>
 
@@ -34,7 +38,7 @@ defineProps({
         {{ usdt }} / <span class="text-xs">USDT</span>
       </div>
     </div>
-    <div class="text-xs">{{ mark }}燃料點數使用於跟單消耗。</div>
+    <div class="text-xs">{{ mark }}</div>
   </div>
 </template>
 
